@@ -14,6 +14,9 @@ app.use(express.urlencoded({
 app.get("/", (req, res) => {
     res.sendStatus(200)
   })
+app.get("/webhook", (req, res) => {
+    res.send("good")
+  })
 
 app.post("/webhook", function(req, res) {
     res.send("HTTP POST request sent to the webhook URL!")
