@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
     res.sendStatus(200)
   })
 app.get("/webhook", (req, res) => {
+  console.log('有傳過去')
     res.send("good")
   })
 
