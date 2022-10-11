@@ -22,6 +22,7 @@ app.get("/webhook", (req, res) => {
 app.post("/webhook", function(req, res) {
     res.send('its in post webhook route')
     console.log("是send嗎")
+    console.log(req.body.events[0])
     if (req.body.events[0].type === "message") {
         // Message data, must be stringified
         const dataString = JSON.stringify({
