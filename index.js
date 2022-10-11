@@ -69,6 +69,9 @@ app.post("/webhook", function(req, res) {
         request.write(dataString)
         request.end()
       }
+      else{
+        console.log("錯誤")
+      }
   })
 
 app.listen(PORT, () => {
