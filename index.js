@@ -1,4 +1,4 @@
-const https = require("https")
+
 const express = require("express")
 const app = express()
 
@@ -15,15 +15,11 @@ app.get("/", (req, res) => {
     res.sendStatus(200)
   })
 app.get("/webhook", (req, res) => {
-  console.log('有傳過去')
     res.send("good")
   })
 
 app.post("/webhook", function(req, res) {
     res.send('its in post webhook route')
-    console.log("是send嗎")
-    console.log(req.body.events)
-    console.log(req.body.events.type)
     if (req.body.events[0].type === "message") {
         // Message data, must be stringified
         const dataString = JSON.stringify({
@@ -70,9 +66,6 @@ app.post("/webhook", function(req, res) {
         // Send data
         request.write(dataString)
         request.end()
-      }
-      else{
-        console.log("錯誤")
       }
   })
 
