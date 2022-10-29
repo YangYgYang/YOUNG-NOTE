@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const TOKEN = process.env.LINE_ACCESS_TOKEN
 
 router.get("/", (req, res) => {
     res.render('index')
