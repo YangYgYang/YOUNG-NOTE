@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
 
 router.post("/", function(req, res) {
     res.send('its in post webhook route')
+    console.log(req.body)
     if (req.body.events[0].type === "message") {
         // Message data, must be stringified
         const dataString = JSON.stringify({
@@ -59,5 +60,3 @@ router.post("/", function(req, res) {
   })
 
   module.exports = router
-
-//   
