@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
 router.post("/", function(req, res) {
     res.send('its in post webhook route')
     console.log(req.body)
+    console.log(req.body.events[0].message)
     if (req.body.events[0].type === "message") {
         // Message data, must be stringified
         const dataString = JSON.stringify({
@@ -60,3 +61,19 @@ router.post("/", function(req, res) {
   })
 
   module.exports = router
+
+  //req.body
+    // {destination: 'Ua6c629d804d64822d2233a99af4d095b',
+    // events: [
+    // {
+    // type: 'message',
+    // message: [Object],
+    // webhookEventId: '01GGH66EDG1JSDWM0EMGPKZS6W',
+    // deliveryContext: [Object],
+    // timestamp: 1667024238548,
+    // source: [Object],
+    // replyToken: 'a65cb959310545e4b613d9045253a5a9',
+    // mode: 'active'
+    // }
+    // ]
+    // }
