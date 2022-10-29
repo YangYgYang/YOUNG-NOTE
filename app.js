@@ -5,7 +5,15 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
+//==========template engine
+const exphbs = require('express-handlebars')
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
 
+//==========setting static files
+app.use(express.static('public'))
+
+//==========line bot setting
 app.use(express.json())
 app.use(express.urlencoded({
   extended: true
