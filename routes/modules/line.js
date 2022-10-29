@@ -4,7 +4,7 @@ const router = express.Router()
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
 router.get("/", (req, res) => {
-    res.send("good")
+    res.send("change branch")
   })
 
 router.post("/", function(req, res) {
@@ -59,3 +59,5 @@ router.post("/", function(req, res) {
   })
 
   module.exports = router
+
+//   
