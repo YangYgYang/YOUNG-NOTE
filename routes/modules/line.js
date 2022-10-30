@@ -62,7 +62,7 @@ router.post("/", function(req, res) {
 
   module.exports = router
 
-  //req.body
+//req.body
     // {destination: 'Ua6c629d804d64822d2233a99af4d095b',
     // events: [
     // {
@@ -77,3 +77,6 @@ router.post("/", function(req, res) {
     // }
     // ]
     // }
+
+//req.body.events[0].message
+//{ type: 'text', id: '17032917703932', text: 'aa' }
